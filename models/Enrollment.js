@@ -5,7 +5,7 @@ const enrollmentSchema = new mongoose.Schema({
     studentName: String,
     course: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Course'
+        ref: 'Course',
     },
     enrollmentDate: {
         type: Date,

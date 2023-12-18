@@ -15,6 +15,15 @@ const EnrollmentController = {
         } catch (error) {
             res.status(500).json({ 'message': error.message ||'error on createEnrollment'})
         }
+    },
+    getAllEnrollments: async (req, res) => {
+        try {
+
+            let result = await EnrollmentService.get_all_enrollments();
+            return res.status(200).send(result);
+        } catch (error) {
+            res.status(500).json({ message: error.message || 'error on getAllEnrollments' });
+        }
     }
 }
 module.exports = EnrollmentController;

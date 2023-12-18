@@ -3,6 +3,7 @@ const CourseService = require('../services/CourseService');
 const CourseControllers = {
     getAllCourses:async(req, res) => {
         try {
+            
             let result = await CourseService.get_courses();
             return res.status(200).send(result);
         } catch (error) {

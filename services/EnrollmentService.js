@@ -8,10 +8,10 @@ const enrollmentService = {
         return await Enrollment.create(enrollmentData);
     },
     validate_enrollment: async (enrollmentData) => {
-        const { studentName, courseId } = enrollmentData;
+        const { studentName, course } = enrollmentData;
 
 
-        const courseExists = await Course.findById(courseId);
+        const courseExists = await Course.findById(course);
         if (!courseExists) {
             return { isValid: false, message: 'Course does not exist' };
         }
@@ -22,6 +22,9 @@ const enrollmentService = {
         }
 
         return { isValid: true };
+    },
+    get_all_enrollments: async () => {
+        return await Enrollment.find().populate('course').exec();
     }
 };
 
