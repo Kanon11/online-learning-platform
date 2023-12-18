@@ -3,6 +3,7 @@ const Course = require('../models/Course');
 
 const courseService = {
     get_courses: async () => {
+        
         return await Course.find();
     },
     create_course: async (courseData) => {
