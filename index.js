@@ -1,16 +1,19 @@
-const  app  = require("./app.js");
+// app.js
+const app = require("./app.js");
 var dbModule = require("./db/connection.js");
 
-
-var connectToDatabase = dbModule.connectToDatabase;
-
-var PORT = process.env.PORT || 5000;
-connectToDatabase()
-    .then(function () {
-        app.listen(PORT, function () {
-            console.log("Server Open in " + PORT + " & Connected To Database 🤟");
+const startServer = async () => {
+    try {
+        await dbModule.connectToDatabase();
+        const PORT = process.env.PORT;
+        app.listen(PORT, () => {
+            console.log(`Server Open in ${PORT} & Connected To Database 🤟`);
         });
-    })
-    .catch(function (err) {
-        console.log(err);
-    });
+    } catch (err) {
+        console.error(err);
+    }
+};
+
+startServer();
+
+module.exports = app;
