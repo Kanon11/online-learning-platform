@@ -4,7 +4,7 @@
 
 
 #Download the code base to your machine
-git clone [https://github.com/Kanon11/imgToPdf.git](https://github.com/Kanon11/online-learning-platform.git)
+git clone https://github.com/Kanon11/online-learning-platform.git
 
 #Go to the project directory
 cd online-learning-platform
@@ -16,6 +16,6 @@ npm i
 docker-compose up --build
 
 #To test api via postman
-import online-learning-platform/olp.postman_collection.json file in your post man
+import online-learning-platform/olp.postman_collection.json file in your Postman application
 
 ```
