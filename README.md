@@ -18,4 +18,8 @@ docker-compose up --build
 #To test api via postman
 import online-learning-platform/olp.postman_collection.json file in your Postman application
 
+#To test api via testCase
+cp .env.example .env
+npm run test
+
 ```
