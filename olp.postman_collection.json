@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "f399c175-c29d-484a-9e6b-9e70e154b234",
+		"name": "olp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4243517",
+		"_collection_link": "https://teamkanon11.postman.co/workspace/My-Workspace~ac81f528-c52c-4929-8d1b-0742ba9f77de/collection/4243517-f399c175-c29d-484a-9e6b-9e70e154b234?action=share&source=collection_link&creator=4243517"
+	},
+	"item": [
+		{
+			"name": "courses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/courses",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "courses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"title\": \"Node js\",\r\n  \"description\": \"intermediate level course\",\r\n  \"instructor\": \"kanon11\",\r\n  \"duration\": 6,\r\n  \"price\": 12000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/courses",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "enrollments",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"studentName\": \"sumon\",\r\n      \"course\": \"65800fc345446a8791d00fda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/enrollments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"enrollments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "enrollments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/enrollments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"enrollments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
